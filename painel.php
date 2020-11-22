@@ -1,7 +1,17 @@
 <?php
 session_start();
-include('verifica_login.php');
+$logged = $_SESSION['logged'] ?? NULL;
+if(!$logged) {
+	header("Location: painel.php");
+}
 ?>
-
-<h2>Olá, <?php echo $_SESSION['nome'];?></h2>
-<h2><a href="logout.php">Sair</a></h2>
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Painel de Controle</title>
+</head>
+<body>
+	<<?php include 'header.php'; ?>
+	<h2>Olá, <?php echo $_SESSION['usuario'];?></h2>
+</body>
+</html>

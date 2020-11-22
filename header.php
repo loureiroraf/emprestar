@@ -4,26 +4,20 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" type="text/css" href="./css/main.css" />
-    <title>Document</title>
+    <title>header</title>
   </head>
   <body>
     <header class="menu-principal">
       <main>
         <div class="header-1">
           <div class="logo">
-            <a href="./index.html"><img src="./img/logo.PNG" /> </a>
+            <a href="./index.php"><img src="./img/logo.PNG" /> </a>
           </div>
           <div class="setting-btn">
-            <a href="./login.html">Login</a>
+            <a href="?logout=1">Logout</a>
           </div>
           <div class="setting-btn">
-            <a href="./cadastro.html">Sign In</a>
-          </div>
-          <div class="setting-btn">
-            <a href="./cadastroItem.html">Add Item</a>
-          </div>
-          <div class="setting-btn">
-            <a href="./index.html">Home</a>
+            <a href="./cadastro.php">Configurações</a>
           </div>
         </div>
       </main>

@@ -1,29 +1,28 @@
 <?php
-// session_start();
+session_start();
 include('conexao.php');
 
-$usuario = mysqli_real_escape_string($conecta, $_POST['usuario']);
-$senha = mysqli_real_escape_string($conecta, $_POST['senha']);
-
-
-if(empty($usuario) || empty($senha)) {
-	header('Location: cadastro.html');
-	exit();
+if(isset($_GET['logout']) && $_GET['logout'] == 1){
+  $_SESSION = array();
+  session_destroy();
+  header('Location: index.php');
 }
 
-$query = "select nome from usuario where usuario = '{$usuario}' and senha = md5('{$senha}')";
+$_SESSION['logged'] = $_SESSION['logged'] ?? false;
 
-$result = mysqli_query($conecta, $query);
-
-$row = mysqli_num_rows($result);
-
-if($row == 1) {
-	$usuario_bd = mysqli_fetch_assoc($result);
-	$_SESSION['nome'] = $usuario_bd['nome'];
-	header('Location: painel.php');
-	exit();
-} else {
-	$_SESSION['nao_autenticado'] = true;
-	header('Location: index.html');
-	exit();
-}
+$usuario = $_POST['usuario'];
+$senha = md5($_POST['senha']);
+$query = "SELECT * FROM usuarios WHERE usuario = '$usuario' AND senha = '$senha'";
+$verifica = mysqli_query($conecta,$query);
+  if (mysqli_num_rows($verifica)<=0){
+    echo"<script language='javascript' type='text/javascript'>
+    alert('Login e/ou senha incorretos');window.location
+    .href='login.php';</script>";
+    die();
+  }else{
+    $_SESSION['usuario'] = $usuario;
+    $_SESSION['senha'] = $senha;
+    $_SESSION['logged'] = true;
+    header("Location: painel.php");
+  } 
+?>

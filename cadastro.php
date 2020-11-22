@@ -11,10 +11,7 @@
   <header class="menu-principal">
     <main>
       <div class="header-1">
-        <div class="logo"><a href="./index.html"><img src="./img/logo.PNG" /></a></div>
-        <div class="setting-btn"><a href="./login.html">Login</a></div>
-        <div class="setting-btn"><a href="./cadastro.html">Cadastro</a></div>
-        <div class="setting-btn"><a href="./cadastroItem.html">Empreste já!</a></div>
+        <div class="logo"><a href="./index.php"><img src="./img/logo.PNG" /></a></div>
       </div>
     </main>
   </header>

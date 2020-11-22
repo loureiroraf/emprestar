@@ -14,7 +14,7 @@ $row = mysqli_fetch_assoc($result);
   if($row['total'] >= 1){
     echo"<script language='javascript' type='text/javascript'>
     alert('Usuario já cadastrado!');window.location.
-    href='cadastro.html'</script>";
+    href='cadastro.php'</script>";
 
   }else{
     $query = "INSERT INTO usuarios (nome ,usuario, senha, email) VALUES ('$nome','$usuario', '$senha', '$email')";
@@ -23,11 +23,11 @@ $row = mysqli_fetch_assoc($result);
     if($insert){
       echo"<script language='javascript' type='text/javascript'>
       alert('Usuário cadastrado com sucesso!');window.location.
-      href='login.html'</script>";
+      href='login.php'</script>";
     }else{
       echo"<script language='javascript' type='text/javascript'>
       alert('Não foi possível cadastrar esse usuário');window.location
-      .href='cadastro.html'</script>";
+      .href='cadastro.php'</script>";
     }
   }
 ?>

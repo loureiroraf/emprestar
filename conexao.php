@@ -1,8 +1,8 @@
 <?php
 $servidor = "localhost";
 $usuario = "root";
-$senha = "";
-$db = "emprestar";
+$senha = "D0ming0s_2006";
+$db = "emprestimo";
 
 $conecta = mysqli_connect($servidor, $usuario, $senha, $db);
 
